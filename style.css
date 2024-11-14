@@ -40,6 +40,7 @@ body * {
 
 #container{
     width: 360px;
+    max-width: 588px;
     margin: 56px auto 0;
     padding: 0 24px;
 }
@@ -86,14 +87,19 @@ left: 0;
 z-index: 1;
 transform: translateY(-50%);
 
+animation: slide-out .4s;
+
 }
 
 
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    animation: slide-in 0.4s forwards;
+   }
 
+#switch button:hover{
+    
+    outline: 8px solid var(--highlight-color)
 }
 
  #switch span{
@@ -181,4 +187,32 @@ background:var(--highlight-color);
 footer {
     padding: 24px 0;
     text-align: center;
+}
+
+
+
+
+
+@keyframes slide-in {
+   
+    from{
+        left: 0;
+    }
+
+    to{
+        left: 50%;
+    }
+
+}
+
+@keyframes slide-out {
+   
+    from{
+        left: 50%;
+    }
+
+    to{
+        left:0;
+    }
+
 }
